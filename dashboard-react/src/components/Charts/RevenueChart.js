@@ -60,7 +60,7 @@ const RevenueChart = () => {
               <i className="fas fa-circle text-success"></i>&nbsp;Social
             </span>
             <span className="me-2">
-              <i className="fas fa-circle text-info"></i>&nbsp;Refferal
+              <i className="fas fa-circle text-info"></i>&nbsp;Referral
             </span>
           </div>
         </div>

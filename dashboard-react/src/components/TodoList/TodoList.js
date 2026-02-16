@@ -5,7 +5,7 @@ const TodoList = () => {
   const todos = [
     { id: 1, task: 'Lunch meeting', time: '10:30 AM' },
     { id: 2, task: 'Lunch meeting', time: '11:30 AM' },
-    { id: 3, task: 'Lunch meeting', time: '12:30 AM' },
+    { id: 3, task: 'Lunch meeting', time: '12:30 PM' },
   ];
 
   return (
