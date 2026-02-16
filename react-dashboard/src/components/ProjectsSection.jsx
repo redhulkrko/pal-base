@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoList from './TodoList';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
@@ -51,6 +52,7 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+      <TodoList />
     </div>
   );
 };
