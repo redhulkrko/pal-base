@@ -1,16 +1,125 @@
-# React + Vite
+# React Dashboard - Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based dashboard application converted from the original HTML/CSS template. It uses Vite for fast development and building, Bootstrap for styling, and Chart.js for data visualization.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Dashboard Layout**: Sidebar navigation and top navigation bar
+- **Statistics Cards**: Display key metrics (earnings, tasks, pending requests)
+- **Interactive Charts**: Line chart for earnings overview and doughnut chart for revenue sources
+- **Progress Tracking**: Project progress bars and todo list
+- **Modern Tech Stack**: React 18, Vite, Bootstrap 5, Chart.js
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+react-dashboard/
+├── public/
+│   └── assets/          # Static assets (images, fonts, Bootstrap CSS/JS)
+├── src/
+│   ├── components/      # React components
+│   │   ├── Sidebar.jsx
+│   │   ├── Topbar.jsx
+│   │   ├── DashboardCards.jsx
+│   │   ├── ChartsSection.jsx
+│   │   ├── EarningsChart.jsx
+│   │   ├── RevenueChart.jsx
+│   │   ├── ProjectsSection.jsx
+│   │   ├── TodoList.jsx
+│   │   ├── ColorPalette.jsx
+│   │   └── Footer.jsx
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Application entry point
+│   └── index.css        # Global styles
+└── package.json
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 24.x or higher
+- npm 11.x or higher
+
+### Installation
+
+1. Navigate to the project directory:
+   ```bash
+   cd react-dashboard
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`
+
+### Build
+
+Build the application for production:
+```bash
+npm run build
+```
+
+The production-ready files will be in the `dist` directory.
+
+### Preview Production Build
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+## Dependencies
+
+- **react**: ^18.3.1
+- **react-dom**: ^18.3.1
+- **bootstrap**: ^5.3.3
+- **@popperjs/core**: ^2.11.8
+- **chart.js**: ^4.4.8
+- **react-chartjs-2**: ^5.3.0
+
+## Components
+
+### Sidebar
+Left navigation panel with links to different pages (Dashboard, Profile, Table, Login, Register).
+
+### Topbar
+Top navigation bar with search functionality, notifications, messages, and user profile dropdown.
+
+### DashboardCards
+Four statistics cards showing monthly earnings, annual earnings, tasks progress, and pending requests.
+
+### ChartsSection
+Contains two charts:
+- **EarningsChart**: Line chart showing earnings over time
+- **RevenueChart**: Doughnut chart showing revenue sources distribution
+
+### ProjectsSection
+Displays project progress bars and includes the TodoList component.
+
+### TodoList
+Interactive todo list with checkboxes for task completion.
+
+### ColorPalette
+Grid of colored cards showing the application's color scheme.
+
+### Footer
+Simple footer with copyright information.
+
+## Styling
+
+The application uses Bootstrap 5 for base styling with custom CSS for component-specific styles. Each component has its own CSS file for better maintainability.
+
+## Original Template
+
+This React application is a conversion of the original HTML dashboard template located in `base/backend/index.html`.
+
