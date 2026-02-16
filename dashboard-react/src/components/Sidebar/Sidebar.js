@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <nav className="navbar align-items-start p-0 sidebar sidebar-dark accordion bg-gradient-primary navbar-dark">
       <div className="container-fluid d-flex flex-column p-0">
-        <a className="navbar-brand d-flex justify-content-center align-items-center m-0 sidebar-brand" href="#">
+        <a className="navbar-brand d-flex justify-content-center align-items-center m-0 sidebar-brand" href="/">
           <div className="sidebar-brand-icon rotate-n-15">
             <i className="fas fa-laugh-wink"></i>
           </div>

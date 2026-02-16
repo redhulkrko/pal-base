@@ -1,1 +1,13 @@
 /* TopBar specific styles */
+button.dropdown-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+

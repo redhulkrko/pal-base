@@ -41,10 +41,10 @@ const RevenueChart = () => {
             </button>
             <div className="dropdown-menu shadow dropdown-menu-end animated--fade-in">
               <p className="text-center dropdown-header">dropdown header:</p>
-              <a className="dropdown-item" href="#">&nbsp;Action</a>
-              <a className="dropdown-item" href="#">&nbsp;Another action</a>
+              <button type="button" className="dropdown-item" onClick={() => {}}>&nbsp;Action</button>
+              <button type="button" className="dropdown-item" onClick={() => {}}>&nbsp;Another action</button>
               <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">&nbsp;Something else here</a>
+              <button type="button" className="dropdown-item" onClick={() => {}}>&nbsp;Something else here</button>
             </div>
           </div>
         </div>

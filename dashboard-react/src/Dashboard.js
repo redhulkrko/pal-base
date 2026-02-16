@@ -21,9 +21,9 @@ function Dashboard() {
             <div className="container-fluid">
               <div className="d-sm-flex justify-content-between align-items-center mb-4">
                 <h3 className="text-dark mb-0">Dashboard</h3>
-                <a className="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#">
+                <button className="btn btn-primary btn-sm d-none d-sm-inline-block" type="button">
                   <i className="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report
-                </a>
+                </button>
               </div>
               <div className="row">
                 <StatsCard
@@ -67,7 +67,7 @@ function Dashboard() {
           </div>
           <Footer />
         </div>
-        <a className="border rounded d-inline scroll-to-top" href="#page-top">
+        <a className="border rounded d-inline scroll-to-top" href="#page-top" aria-label="Scroll to top">
           <i className="fas fa-angle-up"></i>
         </a>
       </div>
