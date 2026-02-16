@@ -1,7 +1,10 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
     <nav className="navbar align-items-start p-0 sidebar sidebar-dark accordion bg-gradient-primary navbar-dark">
       <div className="container-fluid d-flex flex-column p-0">
@@ -19,16 +22,16 @@ const Sidebar = () => {
         <hr className="my-0 sidebar-divider" />
         <ul className="navbar-nav text-light" id="accordionSidebar">
           <li className="nav-item">
-            <a className="nav-link active" href="/index.html">
+            <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/">
               <i className="fas fa-tachometer-alt"></i>
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/films.html">
+            <Link className={`nav-link ${location.pathname === "/films" ? "active" : ""}`} to="/films">
               <i className="fas fa-film"></i>
               <span>Films</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/box-office.html">
