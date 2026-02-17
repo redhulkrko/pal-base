@@ -12,6 +12,7 @@ export const carouselSlides = [
   {
     id: 2,
     title: "THUNDERBOLTS: THE TEAM NOBODY ASKED FOR",
+    // Note: Using same URL for both thumbnail and main image for mock data purposes
     thumbnail: "https://comicbook.com/wp-content/uploads/sites/4/2025/04/thunderbolts-poster-header.jpg",
     image: "https://comicbook.com/wp-content/uploads/sites/4/2025/04/thunderbolts-poster-header.jpg",
     status: "Coming Soon",
@@ -22,6 +23,7 @@ export const carouselSlides = [
   {
     id: 3,
     title: "CAPTAIN AMERICA: BRAVE NEW WORLD",
+    // Note: Using same URL for both thumbnail and main image for mock data purposes
     thumbnail: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1DvC7k.img",
     image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1DvC7k.img",
     status: "Coming Soon",
