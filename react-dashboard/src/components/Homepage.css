@@ -1,7 +1,8 @@
-body {
+.homepage-wrapper {
   font-family: Rubik, sans-serif;
   background: linear-gradient(to bottom, #264f7d, #000000);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .hero-wrapper {

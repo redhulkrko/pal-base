@@ -8,12 +8,14 @@ import './Homepage.css';
 
 const Homepage = () => {
   return (
-    <div className="container px-0 shell">
-      <NavbarHome />
-      <Carousel />
-      <QuickBook />
-      <ShowingsSection />
-      <FooterHome />
+    <div className="homepage-wrapper">
+      <div className="container px-0 shell">
+        <NavbarHome />
+        <Carousel />
+        <QuickBook />
+        <ShowingsSection />
+        <FooterHome />
+      </div>
     </div>
   );
 };

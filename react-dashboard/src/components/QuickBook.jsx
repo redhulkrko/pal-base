@@ -25,9 +25,9 @@ const QuickBook = () => {
                   </svg>
                   Select Film
                 </label>
-                <select className="quick-book-select form-select">
+                <select className="quick-book-select form-select" defaultValue="12">
                   <optgroup label="This is a group">
-                    <option value="12" defaultValue>Choose a film...</option>
+                    <option value="12">Choose a film...</option>
                     <option value="13">This is item 2</option>
                     <option value="14">This is item 3</option>
                   </optgroup>
@@ -49,9 +49,9 @@ const QuickBook = () => {
                   </svg>
                   Select Date
                 </label>
-                <select className="quick-book-select form-select">
+                <select className="quick-book-select form-select" defaultValue="12">
                   <optgroup label="This is a group">
-                    <option value="12" defaultValue>Choose a date...</option>
+                    <option value="12">Choose a date...</option>
                     <option value="13">This is item 2</option>
                     <option value="14">This is item 3</option>
                   </optgroup>
@@ -74,9 +74,9 @@ const QuickBook = () => {
                   </svg>
                   Select Time
                 </label>
-                <select className="quick-book-select form-select">
+                <select className="quick-book-select form-select" defaultValue="12">
                   <optgroup label="This is a group">
-                    <option value="12" defaultValue>Choose a time...</option>
+                    <option value="12">Choose a time...</option>
                     <option value="13">This is item 2</option>
                     <option value="14">This is item 3</option>
                   </optgroup>

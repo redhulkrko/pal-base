@@ -37,15 +37,15 @@ function App() {
     <Router>
       <Routes>
         <Route path="/homepage" element={<Homepage />} />
-        <Route path="/*" element={
+        <Route path="/" element={
           <div id="wrapper">
             <Sidebar />
             <div className="d-flex flex-column" id="content-wrapper">
               <div id="content">
                 <Topbar />
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/films" element={<Films />} />
+                  <Route index element={<Dashboard />} />
+                  <Route path="films" element={<Films />} />
                 </Routes>
               </div>
               <Footer />
