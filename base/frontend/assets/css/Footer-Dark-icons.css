@@ -1,0 +1,206 @@
+.bs-icon {
+  --bs-icon-size: .75rem;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--bs-icon-size);
+  width: calc(var(--bs-icon-size) * 2);
+  height: calc(var(--bs-icon-size) * 2);
+  color: var(--bs-primary);
+}
+
+.bs-icon-xs {
+  --bs-icon-size: 1rem;
+  width: calc(var(--bs-icon-size) * 1.5);
+  height: calc(var(--bs-icon-size) * 1.5);
+}
+
+.bs-icon-sm {
+  --bs-icon-size: 1rem;
+}
+
+.bs-icon-md {
+  --bs-icon-size: 1.5rem;
+}
+
+.bs-icon-lg {
+  --bs-icon-size: 2rem;
+}
+
+.bs-icon-xl {
+  --bs-icon-size: 2.5rem;
+}
+
+.bs-icon.bs-icon-primary {
+  color: var(--bs-white);
+  background: var(--bs-primary);
+}
+
+.bs-icon.bs-icon-primary-light {
+  color: var(--bs-primary);
+  background: rgba(var(--bs-primary-rgb), .2);
+}
+
+.bs-icon.bs-icon-semi-white {
+  color: var(--bs-primary);
+  background: rgba(255, 255, 255, .5);
+}
+
+.bs-icon.bs-icon-rounded {
+  border-radius: .5rem;
+}
+
+.bs-icon.bs-icon-circle {
+  border-radius: 50%;
+}
+
+.showtimes-intro {
+}
+
+.showtimes-intro p {
+  color: #495057;
+  font-size: 1rem;
+}
+
+.showtimes-into small {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.showtimes-intro small {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.schedule-link {
+  color: #3498db;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.no-sessions-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: white;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-sessions-message .btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+
+.quick-book-section {
+  padding: 0 0 60px;
+}
+
+.content-card {
+  height: 550px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-graphic {
+  background-color: #9b59b6;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.format-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.content-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.content-card .card-title {
+  margin-bottom: 0.75rem;
+}
+
+.content-card .card-text {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
+}
+
+.showtimes-list {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 2px solid #dee2e6;
+}
+
+.showtimes-label {
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.times-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.time-button {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
