@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
+import Carousel from './components/Carousel';
 import DashboardCards from './components/DashboardCards';
 import ChartsSection from './components/ChartsSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -20,6 +21,7 @@ function Dashboard() {
             <i className="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report
           </a>
         </div>
+        <Carousel />
         <DashboardCards />
         <ChartsSection />
         <div className="row">

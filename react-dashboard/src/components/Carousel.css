@@ -1,0 +1,112 @@
+.carousel-container {
+  width: 100%;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.dashboard-carousel {
+  width: 100%;
+  height: 300px;
+  border-radius: 0.35rem;
+}
+
+.carousel-slide {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.carousel-content {
+  max-width: 800px;
+  color: white;
+}
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-description {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper navigation buttons customization */
+.dashboard-carousel .swiper-button-next,
+.dashboard-carousel .swiper-button-prev {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.dashboard-carousel .swiper-button-next:hover,
+.dashboard-carousel .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-carousel .swiper-button-next::after,
+.dashboard-carousel .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+/* Pagination customization */
+.dashboard-carousel .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+.dashboard-carousel .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 250px;
+    padding: 1.5rem;
+  }
+
+  .carousel-title {
+    font-size: 1.8rem;
+  }
+
+  .carousel-description {
+    font-size: 1rem;
+  }
+
+  .dashboard-carousel {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-slide {
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-description {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-carousel {
+    height: 200px;
+  }
+}
