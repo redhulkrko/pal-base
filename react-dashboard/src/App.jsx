@@ -8,6 +8,7 @@ import ProjectsSection from './components/ProjectsSection';
 import ColorPalette from './components/ColorPalette';
 import Footer from './components/Footer';
 import Films from './components/Films';
+import Homepage from './components/Homepage';
 import './App.css';
 
 function Dashboard() {
@@ -34,22 +35,27 @@ function Dashboard() {
 function App() {
   return (
     <Router>
-      <div id="wrapper">
-        <Sidebar />
-        <div className="d-flex flex-column" id="content-wrapper">
-          <div id="content">
-            <Topbar />
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/films" element={<Films />} />
-            </Routes>
+      <Routes>
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/*" element={
+          <div id="wrapper">
+            <Sidebar />
+            <div className="d-flex flex-column" id="content-wrapper">
+              <div id="content">
+                <Topbar />
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/films" element={<Films />} />
+                </Routes>
+              </div>
+              <Footer />
+            </div>
+            <a className="border rounded d-inline scroll-to-top" href="#page-top">
+              <i className="fas fa-angle-up"></i>
+            </a>
           </div>
-          <Footer />
-        </div>
-        <a className="border rounded d-inline scroll-to-top" href="#page-top">
-          <i className="fas fa-angle-up"></i>
-        </a>
-      </div>
+        } />
+      </Routes>
     </Router>
   );
 }

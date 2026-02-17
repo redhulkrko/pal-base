@@ -28,6 +28,12 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className={`nav-link ${location.pathname === "/homepage" ? "active" : ""}`} to="/homepage">
+              <i className="fas fa-home"></i>
+              <span>Homepage</span>
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className={`nav-link ${location.pathname === "/films" ? "active" : ""}`} to="/films">
               <i className="fas fa-film"></i>
               <span>Films</span>
