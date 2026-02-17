@@ -1,48 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
+import { carouselSlides } from '../data/carouselData';
 
 const Carousel = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(carouselSlides[0]);
+
+  const handleSlideChange = (swiper) => {
+    setActiveSlide(carouselSlides[swiper.activeIndex]);
+  };
+
   return (
     <header>
       <div className="px-4 hero-wrapper">
         <div className="hero-thumbs">
-          <img 
-            src="https://www.ecartelera.com/images/noticias/80800/80857-h3.webp" 
-            alt="Movie thumbnail 1"
-          />
-          <img 
-            src="https://comicbook.com/wp-content/uploads/sites/4/2025/04/thunderbolts-poster-header.jpg" 
-            alt="Movie thumbnail 2"
-          />
-          <img 
-            src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1DvC7k.img" 
-            alt="Movie thumbnail 3"
-          />
+          <Swiper
+            onSwiper={setThumbsSwiper}
+            direction="vertical"
+            spaceBetween={8}
+            slidesPerView={3}
+            watchSlidesProgress={true}
+            modules={[Thumbs]}
+            className="thumbs-swiper"
+          >
+            {carouselSlides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <img 
+                  src={slide.thumbnail} 
+                  alt={`${slide.title} thumbnail`}
+                  style={{ width: '190px', height: '110px', objectFit: 'cover', cursor: 'pointer' }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <div className="hero-image-wrap">
-          <img 
-            className="hero-image" 
-            src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2024/12/ana-de-armas-in-ballerina.jpg"
-            alt="Featured movie"
-          />
-          <div className="hero-action-buttons">
-            <button className="btn btn-primary" type="button">Book Now</button>
-            <button className="btn btn-light" type="button">More Info</button>
-          </div>
+          <Swiper
+            spaceBetween={10}
+            navigation={true}
+            pagination={{ clickable: true }}
+            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+            modules={[Navigation, Pagination, Thumbs]}
+            onSlideChange={handleSlideChange}
+            className="main-swiper"
+          >
+            {carouselSlides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <img 
+                  className="hero-image" 
+                  src={slide.image}
+                  alt={slide.title}
+                />
+                <div className="hero-action-buttons">
+                  <button className="btn btn-primary" type="button">Book Now</button>
+                  <button className="btn btn-light" type="button">More Info</button>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
       <div className="blue-strip">
         <div className="d-flex h-100 justify-content-end align-items-center p3-4">
-          <span className="text-white">Now Showing</span>
+          <span className="text-white">{activeSlide.status}</span>
           <span className="text-white mx-3">•</span>
-          <span className="text-white">Screen 1</span>
+          <span className="text-white">{activeSlide.screen}</span>
           <span className="text-white mx-3">•</span>
-          <span className="text-white">PG</span>
+          <span className="text-white">{activeSlide.rating}</span>
           <span className="text-white mx-3">•</span>
-          <span className="text-white">145 mins</span>
+          <span className="text-white">{activeSlide.duration}</span>
         </div>
       </div>
       <div className="ps-3 pe-4 pt-4 card-overlap">
-        <h1>FROM THE WORLD OF JOHN WICK: BALLERINA</h1>
+        <h1>{activeSlide.title}</h1>
       </div>
     </header>
   );
