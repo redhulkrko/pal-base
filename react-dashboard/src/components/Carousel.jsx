@@ -1,73 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './Carousel.css';
+import 'swiper/css/thumbs';
+import { carouselSlides } from '../data/carouselData';
 
 const Carousel = () => {
-  // Mock data for carousel items
-  const carouselItems = [
-    {
-      id: 1,
-      title: 'Welcome to Your Dashboard',
-      description: 'Manage all your projects and track performance metrics in one place',
-      image: 'https://via.placeholder.com/1200x400/4e73df/ffffff?text=Dashboard+Overview',
-      bgColor: '#4e73df'
-    },
-    {
-      id: 2,
-      title: 'Track Your Progress',
-      description: 'Monitor project completion rates and team productivity with our advanced analytics',
-      image: 'https://via.placeholder.com/1200x400/1cc88a/ffffff?text=Analytics+Tools',
-      bgColor: '#1cc88a'
-    },
-    {
-      id: 3,
-      title: 'Collaborate Effectively',
-      description: 'Work together seamlessly with real-time updates and team communication tools',
-      image: 'https://via.placeholder.com/1200x400/36b9cc/ffffff?text=Team+Collaboration',
-      bgColor: '#36b9cc'
-    },
-    {
-      id: 4,
-      title: 'Generate Reports',
-      description: 'Create comprehensive reports with just one click and share insights with stakeholders',
-      image: 'https://via.placeholder.com/1200x400/f6c23e/ffffff?text=Smart+Reporting',
-      bgColor: '#f6c23e'
-    }
-  ];
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(carouselSlides[0]);
+
+  const handleSlideChange = (swiper) => {
+    setActiveSlide(carouselSlides[swiper.activeIndex]);
+  };
 
   return (
-    <div className="carousel-container mb-4">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        className="dashboard-carousel"
-      >
-        {carouselItems.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className="carousel-slide" style={{ backgroundColor: item.bgColor }}>
-              <div className="carousel-content">
-                <h2 className="carousel-title">{item.title}</h2>
-                <p className="carousel-description">{item.description}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <header>
+      <div className="px-4 hero-wrapper">
+        <div className="hero-thumbs">
+          <Swiper
+            onSwiper={setThumbsSwiper}
+            direction="vertical"
+            spaceBetween={8}
+            slidesPerView={3}
+            watchSlidesProgress={true}
+            modules={[Thumbs]}
+            className="thumbs-swiper"
+          >
+            {carouselSlides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <img 
+                  src={slide.thumbnail} 
+                  alt={`${slide.title} thumbnail`}
+                  style={{ width: '190px', height: '110px', objectFit: 'cover', cursor: 'pointer' }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="hero-image-wrap">
+          <Swiper
+            spaceBetween={10}
+            navigation={true}
+            pagination={{ clickable: true }}
+            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+            modules={[Navigation, Pagination, Thumbs]}
+            onSlideChange={handleSlideChange}
+            className="main-swiper"
+          >
+            {carouselSlides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <img 
+                  className="hero-image" 
+                  src={slide.image}
+                  alt={slide.title}
+                />
+                <div className="hero-action-buttons">
+                  <button className="btn btn-primary" type="button">Book Now</button>
+                  <button className="btn btn-light" type="button">More Info</button>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+      <div className="blue-strip">
+        <div className="d-flex h-100 justify-content-end align-items-center p3-4">
+          <span className="text-white">{activeSlide.status}</span>
+          <span className="text-white mx-3">•</span>
+          <span className="text-white">{activeSlide.screen}</span>
+          <span className="text-white mx-3">•</span>
+          <span className="text-white">{activeSlide.rating}</span>
+          <span className="text-white mx-3">•</span>
+          <span className="text-white">{activeSlide.duration}</span>
+        </div>
+      </div>
+      <div className="ps-3 pe-4 pt-4 card-overlap">
+        <h1>{activeSlide.title}</h1>
+      </div>
+    </header>
   );
 };
 
